@@ -1,0 +1,219 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 65011712 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3559), pid=18260, tid=19624
+#
+# JRE version:  (17.0.7+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.7+7, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 --module-path=C:\Users\Lenovo\Downloads\mysql-connector-j-8.1.0\mysql-connector-j-8.1.0.jar;C:\Users\Lenovo\Downloads\javax.mail.jar;C:\Users\Lenovo\Downloads\jaf-1.1.1\activation.jar -XX:+ShowCodeDetailsInExceptionMessages travel.management.system.Destination
+
+Host: Intel(R) Core(TM) i3 CPU       M 350  @ 2.27GHz, 4 cores, 3G,  Windows 10 , 64 bit Build 19041 (10.0.19041.3031)
+Time: Thu Sep  7 22:14:29 2023 India Standard Time elapsed time: 0.059913 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000165324c98c0):  JavaThread "Unknown thread" [_thread_in_vm, id=19624, stack(0x000000087dc00000,0x000000087dd00000)]
+
+Stack: [0x000000087dc00000,0x000000087dd00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x67754a]
+V  [jvm.dll+0x834304]
+V  [jvm.dll+0x835aae]
+V  [jvm.dll+0x836113]
+V  [jvm.dll+0x24696f]
+V  [jvm.dll+0x6743f9]
+V  [jvm.dll+0x668c8a]
+V  [jvm.dll+0x3061bb]
+V  [jvm.dll+0x30d6a6]
+V  [jvm.dll+0x35cece]
+V  [jvm.dll+0x35d0ff]
+V  [jvm.dll+0x2dd048]
+V  [jvm.dll+0x2ddfb4]
+V  [jvm.dll+0x8066d1]
+V  [jvm.dll+0x36ac91]
+V  [jvm.dll+0x7e5cec]
+V  [jvm.dll+0x3ed56f]
+V  [jvm.dll+0x3ef0a1]
+C  [jli.dll+0x528b]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17614]
+C  [ntdll.dll+0x526f1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffa6d7a7018, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x0000016532505850 GCTaskThread "GC Thread#0" [stack: 0x000000087dd00000,0x000000087de00000] [id=17496]
+  0x000001653250e7f0 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000087de00000,0x000000087df00000] [id=19384]
+  0x000001653250f100 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000087df00000,0x000000087e000000] [id=20032]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa6cf7daf7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000165324c4cb0] Heap_lock - owner thread: 0x00000165324c98c0
+
+Heap address: 0x00000000c3200000, size: 974 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000c3200000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa6d360db9]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.012 Loaded shared library C:\Users\Lenovo\Downloads\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff63f330000 - 0x00007ff63f33e000 	C:\Users\Lenovo\Downloads\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\javaw.exe
+0x00007ffaafd30000 - 0x00007ffaaff28000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffaae7a0000 - 0x00007ffaae85f000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffaad9d0000 - 0x00007ffaadcc6000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffaad4d0000 - 0x00007ffaad5d0000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffaa94d0000 - 0x00007ffaa94e9000 	C:\Users\Lenovo\Downloads\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\VCRUNTIME140.dll
+0x00007ffaa70a0000 - 0x00007ffaa70b7000 	C:\Users\Lenovo\Downloads\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\jli.dll
+0x00007ffaae4f0000 - 0x00007ffaae68d000 	C:\Windows\System32\USER32.dll
+0x00007ffaad680000 - 0x00007ffaad6a2000 	C:\Windows\System32\win32u.dll
+0x00007ffaae710000 - 0x00007ffaae73c000 	C:\Windows\System32\GDI32.dll
+0x00007ffaad750000 - 0x00007ffaad865000 	C:\Windows\System32\gdi32full.dll
+0x00007ffaad6b0000 - 0x00007ffaad74d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffa9e0b0000 - 0x00007ffa9e34a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffaafc50000 - 0x00007ffaafcee000 	C:\Windows\System32\msvcrt.dll
+0x00007ffaaecd0000 - 0x00007ffaaed00000 	C:\Windows\System32\IMM32.DLL
+0x00007ffaaa080000 - 0x00007ffaaa08c000 	C:\Users\Lenovo\Downloads\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\vcruntime140_1.dll
+0x00007ffa93f90000 - 0x00007ffa94021000 	C:\Users\Lenovo\Downloads\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\msvcp140.dll
+0x00007ffa6cc90000 - 0x00007ffa6d8d8000 	C:\Users\Lenovo\Downloads\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\server\jvm.dll
+0x00007ffaaedd0000 - 0x00007ffaaee7f000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffaaef70000 - 0x00007ffaaf00c000 	C:\Windows\System32\sechost.dll
+0x00007ffaaf280000 - 0x00007ffaaf3a6000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffa9f470000 - 0x00007ffa9f479000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffa9f950000 - 0x00007ffa9f977000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffaaed60000 - 0x00007ffaaedcb000 	C:\Windows\System32\WS2_32.dll
+0x00007ffa9e7b0000 - 0x00007ffa9e7ba000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffaab2c0000 - 0x00007ffaab2d2000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffaa9f20000 - 0x00007ffaa9f2a000 	C:\Users\Lenovo\Downloads\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\jimage.dll
+0x00007ffa9e500000 - 0x00007ffa9e6e4000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffa9d420000 - 0x00007ffa9d454000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffaad410000 - 0x00007ffaad492000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffaa1070000 - 0x00007ffaa1095000 	C:\Users\Lenovo\Downloads\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Lenovo\Downloads\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Users\Lenovo\Downloads\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 --module-path=C:\Users\Lenovo\Downloads\mysql-connector-j-8.1.0\mysql-connector-j-8.1.0.jar;C:\Users\Lenovo\Downloads\javax.mail.jar;C:\Users\Lenovo\Downloads\jaf-1.1.1\activation.jar -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: travel.management.system.Destination
+java_class_path (initial): C:\Users\Lenovo\eclipse-workspace\TravelManagementSystem\bin
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 65011712                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1021313024                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 1021313024                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:/Users/Lenovo/Desktop/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502/jre/bin/server;C:/Users/Lenovo/Desktop/eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Java\jdk-16.0.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MySQL\MySQL Server 8.0\bin;;C:\Users\Lenovo\Desktop\eclipse;
+USERNAME=Lenovo
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 37 Stepping 2, GenuineIntel
+TMP=C:\Users\Lenovo\AppData\Local\Temp
+TEMP=C:\Users\Lenovo\AppData\Local\Temp
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.3031)
+OS uptime: 2 days 2:43 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 2 microcode 0x11, cx8, cmov, fxsr, ht, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, tsc, tscinvbit, clflush
+
+Memory: 4k page, system-wide physical 3894M (325M free)
+TotalPageFile size 15670M (AvailPageFile size 54M)
+current process WorkingSet (physical memory assigned to process): 9M, peak: 9M
+current process commit charge ("private bytes"): 51M, peak: 113M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.7+7) for windows-amd64 JRE (17.0.7+7), built on Apr 18 2023 22:10:42 by "temurin" with MS VC++ 16.7 (VS2019)
+
+END.
